@@ -1,10 +1,8 @@
-package com.example.modul5psi.viewmodel
+package com.example.recyclerpsi.viewmodel
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
-import com.example.modul5psi.model.MahasiswaModel
+import com.example.recyclerpsi.model.MahasiswaModel
 
 class MahasiswaViewModel : ViewModel() {
 
@@ -26,17 +24,17 @@ class MahasiswaViewModel : ViewModel() {
     }
 
     //CREATE MODEL
-    fun addMahasiswa(nama: String, nim: String, kelas:String) {
-        mahasiswaList.add(MahasiswaModel(nama, nim, kelas))
+    fun addMahasiswa(nama: String, nim: String, kelas:String, foto:String) {
+        mahasiswaList.add(MahasiswaModel(nama, nim, kelas,foto))
         addData(mahasiswaList)
     }
 
 
     //CREATE DUMMY DATA
     private fun createMahasiswa() {
-        addMahasiswa("Richo Wijaya Putra", "205150200111018", "TIF-A")
-        addMahasiswa("Erling Haaland", "205150200113012", "TEKKOM-B")
-        addMahasiswa("Kevin de Bruyne", "205150200117011", "TIF-C")
-        addMahasiswa("Antony Santos", "205150200112902", "SI-A")
+        addMahasiswa("Nelson Alfons Abilo", "205150200111017", "TIF-A","image_2")
+        addMahasiswa("Richo Wijaya Putra", "205150200111018", "TEKKOM-B", "image_0")
+        addMahasiswa("Auryn Seanita", "205150201111011", "TIF-C", "image_1")
+        addMahasiswa("Billy Kurniananda", "205150201111014", "SI-A","image_3")
     }
 }

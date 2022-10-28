@@ -1,14 +1,16 @@
-package com.example.modul5psi.helper
+package com.example.recyclerpsi.helper
 
 import android.content.Context
+import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
-import com.example.modul5psi.R
-import com.example.modul5psi.model.MahasiswaModel
+import com.example.recyclerpsi.R
+import com.example.recyclerpsi.model.MahasiswaModel
 
 class MahasiswaAdapter(var mahasiswaList: LiveData<List<MahasiswaModel>>, val context: Context):
     RecyclerView.Adapter<MahasiswaAdapter.MahasiswaViewHolder>() {
@@ -17,6 +19,7 @@ class MahasiswaAdapter(var mahasiswaList: LiveData<List<MahasiswaModel>>, val co
             itemView.findViewById<TextView>(R.id.nama).text = model.nama
             itemView.findViewById<TextView>(R.id.nim).text = model.nim
             itemView.findViewById<TextView>(R.id.kelas).text = model.kelas
+            itemView.findViewById<ImageView>(R.id.foto).setImageResource(context.getResources().getIdentifier(model.image, "drawable", context.packageName))
         }
     }
 
@@ -26,7 +29,7 @@ class MahasiswaAdapter(var mahasiswaList: LiveData<List<MahasiswaModel>>, val co
     }
 
     override fun onBindViewHolder(holder: MahasiswaViewHolder, position: Int) {
-        mahasiswaList.value!!?.get(position)?.let { holder.bindItems(it) }
+        mahasiswaList.value!!.get(position).let { holder.bindItems(it) }
     }
 
     override fun getItemCount(): Int {

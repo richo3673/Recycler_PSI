@@ -1,4 +1,4 @@
-package com.example.modul5psi
+package com.example.recyclerpsi
 
 import org.junit.Test
 

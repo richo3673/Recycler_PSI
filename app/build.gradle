@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.modul5psi'
+    namespace 'com.example.recyclerpsi'
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.example.modul5psi"
+        applicationId "com.example.recyclerpsi"
         minSdk 21
         targetSdk 32
         versionCode 1
@@ -36,13 +36,8 @@ android {
 }
 
 dependencies {
-    def lifecycle_version = "1.1.1"
     implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
     annotationProcessor 'androidx.lifecycle:lifecycle-compiler:2.0.0'
-    implementation 'com.google.android.material:material:1.6.1'
-//    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
-//    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
-//    implementation 'io.reactivex.rxjava2:rxjava:2.1.17'
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.6.1'
